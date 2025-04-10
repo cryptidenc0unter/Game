@@ -1,0 +1,27 @@
+{
+  "name": "videogame-webpage",
+  "version": "1.0.0",
+  "description": "A webpage for showcasing a video game.",
+  "main": "src/index.html",
+  "scripts": {
+    "start": "live-server src",
+    "build": "echo 'Build script not defined'",
+    "test": "echo 'Test script not defined'"
+  },
+  "keywords": [
+    "videogame",
+    "webpage",
+    "showcase"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "live-server": "^1.2.1"
+  },
+  "devDependencies": {},
+  "homepage": "https://yourwebsite.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/videogame-webpage.git"
+  }
+}
