@@ -3,41 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DnD Game</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #333;
-            color: white;
-            padding: 1rem;
-            text-align: center;
-        }
-        .character-section {
-            padding: 2rem;
-            background-color: #fff;
-        }
-        .character {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 1rem;
-            margin: 1rem 0;
-            background-color: #f9f9f9;
-        }
-        .character h3 {
-            margin-top: 0;
-        }
-    </style>
+    <title>Crimpson SMP: The Legend of Askaria</title>
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
     <header>
-        <h1>Welcome to the DnD Game</h1>
+        <h1>Welcome to Crimpson SMP: The Legend of Askaria</h1>
     </header>
-    <section class="character-section">
+    <nav>
+        <ul>
+            <li>
+                <a href="#characters">Characters</a>
+            </li>
+            <li>
+                <a href="#species">Species</a>
+            </li>
+            <li>
+                <a href="#class">Class</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="search-bar">
+        <input type="text" placeholder="Search...">
+        <button>Search</button>
+    </div>
+    <section class="showcase-section">
+        <h2>Game Showcase</h2>
+        <div>
+            <img src="images/photo1.jpg" alt="Game Screenshot 1">
+            <img src="images/photo2.jpg" alt="Game Screenshot 2">
+            <img src="images/photo3.jpg" alt="Game Screenshot 3">
+        </div>
+    </section>
+    <section id="characters" class="character-section">
         <h2>Main Characters</h2>
         <div class="character">
             <h3>Character 1: Name</h3>
@@ -60,5 +58,33 @@
             <p>Description of Character 5. Include their role, abilities, and backstory.</p>
         </div>
     </section>
+    <section class="cards">
+        <div class="card">
+            <img src="character1.jpg" alt="Character 1">
+            <h3>Character Name</h3>
+            <p>Short description of the character.</p>
+        </div>
+        <div class="card">
+            <img src="character2.jpg" alt="Character 2">
+            <h3>Character Name</h3>
+            <p>Short description of the character.</p>
+        </div>
+    </section>
+    <section id="species" class="species-section">
+        <h2>Species</h2>
+        <p>Details about the various species in the game will go here.</p>
+    </section>
+    <section id="class" class="class-section">
+        <h2>Class</h2>
+        <p>Details about the different classes in the game will go here.</p>
+    </section>
+    <footer>
+        <p>&copy; 2025 Your Game Name. All rights reserved.</p>
+        <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </footer>
 </body>
 </html>
