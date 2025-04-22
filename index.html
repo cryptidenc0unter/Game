@@ -1,90 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crimpson SMP: The Legend of Askaria</title>
-    <link rel="stylesheet" href="styles/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fantasy Realm</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    :root {
+      --light: #f7c8a1;
+      --accent: #e6893d;
+      --rust: #d66c43;
+      --rose: #b75c8d;
+      --twilight: #5f4b8b;
+      --midnight: #4d4a89;
+      --deep-night: #3b3a6d; /* New darker shade */
+      --subtle-pink: #d89bb0; /* Subtle pink shade */
+      --soft-blue: #4a5a8a; /* Similar blue shade */
+      --light-blue: #6a7ba8; /* Lighter blue for gradient effect */
+      --slightly-lighter-midnight: #5a5b9a; /* Slightly lighter than --midnight */
+    }
+
+    body {
+      font-family: 'Cinzel', serif;
+      background: linear-gradient(to bottom, #f7c8a1, #e6893d, #d66c43, #b75c8d, #5f4b8b, #4d4a89); /* Matching gradient */
+      background-size: 400% 400%;
+      animation: gradientAnimation 15s ease infinite;
+    }
+
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .text-gray-200, .text-gray-300, .text-gray-400 {
+      color: var(--light) !important;
+    }
+
+    .bg-gray-800 {
+      background-color: var(--slightly-lighter-midnight) !important; /* Slightly lighter color */
+    }
+    .bg-gray-900 {
+      background-color: var(--midnight) !important;
+    }
+
+    .border-yellow-800 {
+      border-color: var(--rust) !important;
+    }
+    .hover\:border-yellow-400:hover {
+      border-color: var(--accent) !important;
+    }
+
+    .bg-yellow-600 {
+      background-color: var(--accent) !important;
+    }
+    .hover\:bg-yellow-500:hover {
+      background-color: var(--rust) !important;
+    }
+
+    .text-yellow-300 {
+      color: var(--accent) !important;
+    }
+    .text-yellow-400 {
+      color: var(--light) !important;
+    }
+
+    .bg-black {
+      background-color: var(--deep-night) !important; /* Apply darker shade */
+    }
+
+    .glow-button {
+      box-shadow: 0 0 10px rgba(247, 200, 161, 0.6); /* Matching glow */
+      transition: box-shadow 0.3s;
+    }
+
+    .glow-button:hover {
+      box-shadow: 0 0 20px rgba(247, 200, 161, 1); /* Matching glow */
+    }
+  </style>
 </head>
-<body>
-    <header>
-        <h1>Welcome to Crimpson SMP: The Legend of Askaria</h1>
-    </header>
-    <nav>
-        <ul>
-            <li>
-                <a href="#characters">Characters</a>
-            </li>
-            <li>
-                <a href="#species">Species</a>
-            </li>
-            <li>
-                <a href="#class">Class</a>
-            </li>
-        </ul>
-    </nav>
-    <div class="search-bar">
-        <input type="text" placeholder="Search...">
-        <button>Search</button>
+<body class="bg-black text-white scroll-smooth">
+
+  <!-- Navbar -->
+  <header class="fixed top-0 w-full bg-black bg-opacity-80 text-yellow-300 z-50 shadow-md">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="text-2xl font-bold">Fantasy Realm</div>
+      <nav class="space-x-6 text-lg">
+        <a href="#classes" class="nav-link">Classes</a>
+        <a href="#factions" class="nav-link">Factions</a>
+        <a href="#world" class="nav-link">World</a>
+        <a href="#join" class="nav-link">Join</a>
+      </nav>
     </div>
-    <section class="showcase-section">
-        <h2>Game Showcase</h2>
-        <div>
-            <img src="images/photo1.jpg" alt="Game Screenshot 1">
-            <img src="images/photo2.jpg" alt="Game Screenshot 2">
-            <img src="images/photo3.jpg" alt="Game Screenshot 3">
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-hero h-screen flex items-center justify-center pt-20">
+    <div class="bg-black bg-opacity-60 p-10 rounded-xl text-center" data-aos="fade-up">
+      <h1 class="text-5xl md:text-7xl text-yellow-400 drop-shadow-lg">Enter the Realm</h1>
+      <p class="mt-4 text-lg text-gray-300">Your story begins in the shadows of legend...</p>
+      <a href="#classes" class="mt-6 inline-block px-6 py-3 bg-yellow-600 hover:bg-yellow-500 text-black font-bold rounded-full glow-button transition duration-300">Begin</a>
+    </div>
+  </section>
+
+  <!-- Classes Section -->
+  <section id="classes" class="py-20 px-6 bg-gray-900" data-aos="fade-right">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="text-3xl text-yellow-300 mb-4">Choose Your Class</h2>
+      <p class="text-gray-300">Rogue, Sorcerer, Paladin, or Ranger — your path defines your fate.</p>
+
+      <!-- Class Cards -->
+      <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <!-- Rogue -->
+        <div class="relative group overflow-hidden rounded-xl shadow-lg border border-yellow-800 hover:border-yellow-400 transition duration-300">
+          <img src="images/Toxic.png" alt="Rogue" class="w-full h-56 object-contain transform group-hover:scale-110 transition duration-500" />
+          <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-center items-center p-4 text-center">
+            <h3 class="text-yellow-300 text-2xl font-bold mb-2">Rogue</h3>
+            <p class="text-gray-200 text-sm">Masters of stealth, critical strikes, and shadowy escapes.</p>
+          </div>
         </div>
-    </section>
-    <section id="characters" class="character-section">
-        <h2>Main Characters</h2>
-        <div class="character">
-            <h3>Character 1: Name</h3>
-            <p>Description of Character 1. Include their role, abilities, and backstory.</p>
+
+        <!-- Sorcerer -->
+        <div class="relative group overflow-hidden rounded-xl shadow-lg border border-yellow-800 hover:border-yellow-400 transition duration-300">
+          <img src="images/Alex.png" alt="Sorcerer" class="w-full h-56 object-contain transform group-hover:scale-110 transition duration-500" />
+          <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-center items-center p-4 text-center">
+            <h3 class="text-yellow-300 text-2xl font-bold mb-2">Sorcerer</h3>
+            <p class="text-gray-200 text-sm">Channelers of raw, arcane energy, born with magic in their blood.</p>
+          </div>
         </div>
-        <div class="character">
-            <h3>Character 2: Name</h3>
-            <p>Description of Character 2. Include their role, abilities, and backstory.</p>
+
+        <!-- Paladin -->
+        <div class="relative group overflow-hidden rounded-xl shadow-lg border border-yellow-800 hover:border-yellow-400 transition duration-300">
+          <img src="images/Adeline.png" alt="Paladin" class="w-full h-56 object-contain transform group-hover:scale-110 transition duration-500" />
+          <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-center items-center p-4 text-center">
+            <h3 class="text-yellow-300 text-2xl font-bold mb-2">Paladin</h3>
+            <p class="text-gray-200 text-sm">Holy warriors bound by oath, delivering divine justice.</p>
+          </div>
         </div>
-        <div class="character">
-            <h3>Character 3: Name</h3>
-            <p>Description of Character 3. Include their role, abilities, and backstory.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Races Section -->
+  <section id="races" class="py-20 px-6 bg-gray-800" data-aos="fade-left">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-3xl text-[#f7c8a1] mb-4">Choose Your Race</h2>
+      <p class="text-[#f7c8a1] mb-10">Ancient bloodlines and cursed origins — each race holds a unique power.</p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        
+        <!-- Human -->
+        <div class="bg-[#4d4a89] p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 text-left">
+          <h3 class="text-2xl text-[#e6893d] mb-2">Human</h3>
+          <p class="text-[#f7c8a1] text-sm">Versatile and resilient. Masters of diplomacy and survival, unbound by fate.</p>
         </div>
-        <div class="character">
-            <h3>Character 4: Name</h3>
-            <p>Description of Character 4. Include their role, abilities, and backstory.</p>
+
+        <!-- Netherborn -->
+        <div class="bg-[#4d4a89] p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 text-left">
+          <h3 class="text-2xl text-[#e6893d] mb-2">Netherborn</h3>
+          <p class="text-[#f7c8a1] text-sm">Children of the void. Ethereal beings with shadow magic in their veins.</p>
         </div>
-        <div class="character">
-            <h3>Character 5: Name</h3>
-            <p>Description of Character 5. Include their role, abilities, and backstory.</p>
+
+        <!-- Dragonborn -->
+        <div class="bg-[#4d4a89] p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 text-left">
+          <h3 class="text-2xl text-[#e6893d] mb-2">Dragonborn</h3>
+          <p class="text-[#f7c8a1] text-sm">Descendants of ancient dragons. Command elemental breath and raw strength.</p>
         </div>
-    </section>
-    <section class="cards">
-        <div class="card">
-            <img src="character1.jpg" alt="Character 1">
-            <h3>Character Name</h3>
-            <p>Short description of the character.</p>
+
+        <!-- Werewolf -->
+        <div class="bg-[#4d4a89] p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 text-left">
+          <h3 class="text-2xl text-[#e6893d] mb-2">Werewolf</h3>
+          <p class="text-[#f7c8a1] text-sm">Feral shapeshifters tied to moonlight. Primal instincts, immense power.</p>
         </div>
-        <div class="card">
-            <img src="character2.jpg" alt="Character 2">
-            <h3>Character Name</h3>
-            <p>Short description of the character.</p>
+
+        <!-- The Corrupted One -->
+        <div class="bg-[#4d4a89] p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 text-left col-span-1 sm:col-span-2 md:col-span-3">
+          <h3 class="text-2xl text-[#e6893d] mb-2">The Corrupted One</h3>
+          <p class="text-[#f7c8a1] text-sm">Once mortal, now a vessel of decay and forbidden forces. A walking omen.</p>
         </div>
-    </section>
-    <section id="species" class="species-section">
-        <h2>Species</h2>
-        <p>Details about the various species in the game will go here.</p>
-    </section>
-    <section id="class" class="class-section">
-        <h2>Class</h2>
-        <p>Details about the different classes in the game will go here.</p>
-    </section>
-    <footer>
-        <p>&copy; 2025 Your Game Name. All rights reserved.</p>
-        <ul>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms of Service</a></li>
-            <li><a href="#">Contact Us</a></li>
-        </ul>
-    </footer>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- World Section -->
+  <section id="world" class="py-20 px-6 bg-gray-900" data-aos="zoom-in">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl text-yellow-300 mb-4">Explore the Lands</h2>
+      <p class="text-gray-300">From cursed forests to ancient ruins, every place holds secrets to uncover.</p>
+    </div>
+  </section>
+
+  <!-- Join Section -->
+  <section id="join" class="py-20 px-6 bg-black" data-aos="fade-up">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-4xl text-yellow-400 mb-4">Join the Adventure</h2>
+      <p class="text-gray-300 mb-6">The realm awaits its next hero. Will you answer the call?</p>
+      <button onclick="location.href='signup.html'" class="px-8 py-4 bg-yellow-600 hover:bg-yellow-500 text-black font-bold rounded-full glow-button transition duration-300">Join Now</button>
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  </script>
 </body>
 </html>
