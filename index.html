@@ -79,6 +79,80 @@
     .glow-button:hover {
       box-shadow: 0 0 20px rgba(247, 200, 161, 1); /* Matching glow */
     }
+
+    /* Media Queries for Phone Screens */
+    @media (max-width: 768px) {
+      header .text-2xl {
+        font-size: 1.25rem; /* Adjust navbar title size */
+      }
+
+      header nav {
+        font-size: 0.875rem; /* Reduce navbar link size */
+        display: flex;
+        flex-wrap: wrap; /* Wrap links for smaller screens */
+        gap: 0.5rem;
+      }
+
+      .h-screen {
+        height: 70vh; /* Reduce hero section height */
+      }
+
+      .text-5xl {
+        font-size: 2.25rem; /* Adjust hero section title size */
+      }
+
+      .text-7xl {
+        font-size: 3rem; /* Adjust large hero section title size */
+      }
+
+      .p-10 {
+        padding: 1.5rem; /* Adjust padding for smaller screens */
+      }
+
+      .text-3xl {
+        font-size: 1.5rem; /* Adjust section heading size */
+      }
+
+      .grid-cols-3, .sm\:grid-cols-2, .md\:grid-cols-3 {
+        grid-template-columns: 1fr; /* Stack cards vertically */
+      }
+
+      .px-6 {
+        padding-left: 1rem; /* Adjust horizontal padding */
+        padding-right: 1rem;
+      }
+
+      .py-20 {
+        padding-top: 2rem; /* Adjust vertical padding */
+        padding-bottom: 2rem;
+      }
+
+      .max-w-6xl, .max-w-5xl, .max-w-4xl, .max-w-3xl {
+        max-width: 95%; /* Reduce container width */
+      }
+
+      .rounded-xl {
+        border-radius: 0.5rem; /* Adjust border radius */
+      }
+
+      .text-lg {
+        font-size: 0.875rem; /* Adjust text size */
+      }
+
+      .text-sm {
+        font-size: 0.75rem; /* Adjust smaller text size */
+      }
+
+      .px-8 {
+        padding-left: 1rem; /* Adjust button padding */
+        padding-right: 1rem;
+      }
+
+      .py-4 {
+        padding-top: 0.5rem; /* Adjust button padding */
+        padding-bottom: 0.5rem;
+      }
+    }
   </style>
 </head>
 <body class="bg-black text-white scroll-smooth">
